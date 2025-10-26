@@ -2,120 +2,81 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Country Info — Stylish UI</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Country Info — Fluent UI Style</title>
     <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body>
-    <div class="wrap">
-      <aside class="panel">
-        <div class="logo">
-          <div class="mark">CI</div>
-          <div>
-            <h2>Country Info</h2>
-            <p>Lookup country data (REST Countries API)</p>
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">CI</div>
+        <div class="brand-text">
+          <div class="title">Country Info</div>
+          <div class="subtitle">REST Countries — practice with fetch()</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <input
+          id="countryInput"
+          class="search-input"
+          placeholder="Type a country name (e.g. Philippines)"
+        />
+        <button id="searchBtn" class="btn primary">Search</button>
+
+        <button
+          id="themeToggle"
+          class="btn toggle"
+          aria-pressed="false"
+          aria-label="Toggle dark mode"
+        >
+          <span id="themeIcon">🌙</span>
+          <span id="themeLabel">Dark</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card flag-card">
+        <img id="flagImg" src="" alt="Country flag" />
+      </section>
+
+      <section class="card info-card">
+        <h1 id="countryName" class="country-name">—</h1>
+
+        <div class="meta-row">
+          <div class="meta">
+            <div class="meta-title">Capital</div>
+            <div id="capital" class="meta-value">—</div>
+          </div>
+
+          <div class="meta">
+            <div class="meta-title">Region</div>
+            <div id="region" class="meta-value">—</div>
+          </div>
+
+          <div class="meta">
+            <div class="meta-title">Population</div>
+            <div id="population" class="meta-value">—</div>
           </div>
         </div>
 
-        <div class="search">
-          <input
-            id="countryInput"
-            placeholder="Type a country name — e.g. Philippines"
-          />
-          <button id="searchBtn">Search</button>
+        <div class="languages-block">
+          <div class="meta-title">Languages</div>
+          <div id="languages" class="languages">—</div>
         </div>
+      </section>
+    </main>
 
-        <div class="history" id="history">
-          <!-- recent searches will appear here as .chip elements -->
-        </div>
-      </aside>
+    <footer class="footer">
+      <div class="footer-left">
+        Made for practice — populate with REST Countries API
+      </div>
+      <div id="updatedAt" class="footer-right">—</div>
+    </footer>
 
-      <main class="viewer">
-        <div class="toprow">
-          <div>
-            <div class="country-name" id="cName">Search a country</div>
-            <div class="sub" id="cSub">
-              Population, capital, region and more
-            </div>
-          </div>
-          <div class="sub">API: restcountries.com</div>
-        </div>
-
-        <div class="result-card" id="resultCard" style="opacity: 0.9">
-          <div class="flag" id="flag">
-            <!-- flag image -->
-            <img src alt />
-          </div>
-          <div class="details">
-            <div
-              style="
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-              "
-            >
-              <div style="font-weight: 700; font-size: 1rem" id="officialName">
-                —
-              </div>
-              <div class="sub" id="cca2">—</div>
-            </div>
-
-            <div class="meta-grid">
-              <div class="meta">
-                <strong>Capital</strong>
-                <div id="capital">—</div>
-              </div>
-              <div class="meta">
-                <strong>Region</strong>
-                <div id="region">—</div>
-              </div>
-              <div class="meta">
-                <strong>Subregion</strong>
-                <div id="subregion">—</div>
-              </div>
-              <div class="meta">
-                <strong>Timezones</strong>
-                <div id="timezones">—</div>
-              </div>
-            </div>
-
-            <div class="stats">
-              <div class="stat">
-                <h3 id="population">—</h3>
-                <p>Population</p>
-              </div>
-              <div class="stat">
-                <h3 id="area">—</h3>
-                <p>Area (km²)</p>
-              </div>
-              <div class="stat">
-                <h3 id="gdp">—</h3>
-                <p>Currency</p>
-              </div>
-            </div>
-
-            <div style="margin-top: 6px">
-              <div class="sub">Languages</div>
-              <div class="languages" id="languages">
-                <!-- language chips -->
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="footer">
-          <div>Dave, API practice GET,async,promise,fetch</div>
-          <div id="updatedAt">—</div>
-        </div>
-      </main>
-    </div>
-
-    <script></script>
+    <script src="theme.js"></script>
+    <!-- dark mode only -->
+    <!-- your fetch/script.js should come after theme.js -->
   </body>
 </html>
