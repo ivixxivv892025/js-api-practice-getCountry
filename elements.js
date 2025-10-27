@@ -1,0 +1,9 @@
+export const countryInputElement = document.getElementById("countryInput");
+export const searchCountryElement = document.getElementById("searchBtn");
+export const countryFlagElement = document.getElementById("flagImg");
+export const countryNameElement = document.getElementById("countryName");
+export const countryCapitalElement = document.getElementById("capital");
+export const countryRegionElement = document.getElementById("region");
+export const countryPopulationElement = document.getElementById("population");
+export const countryLanguagesElement = document.getElementById("languages");
+export const errorElement = document.querySelector(".footer-left");
